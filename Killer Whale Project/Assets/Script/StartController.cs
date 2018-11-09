@@ -10,6 +10,7 @@ public class StartController : MonoBehaviour
     public void MainButtonClicked()
     {
         SceneManager.LoadScene("main");
+        GetComponent<HpController>().currentHP = GetComponent<HpController>().maxHP;
     }
 
     void Start()

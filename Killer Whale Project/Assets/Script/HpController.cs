@@ -6,10 +6,10 @@ using UnityEngine.UI;
 public class HpController : MonoBehaviour {
     //最大値
     [SerializeField]
-    int maxHP = 100;
+    public int maxHP = 100;
     //現在値
     [SerializeField]
-    float currentHP;
+    public float currentHP;
     GameObject Hp;
 
     public Button button;

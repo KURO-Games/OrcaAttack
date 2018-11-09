@@ -16,7 +16,6 @@ public class MainController : MonoBehaviour
 
     void Start()
     {
-        int sceneIndex = SceneManager.GetActiveScene().buildIndex;
         InvokeRepeating("Generate", 10, 10);
     }
     void Generate()
