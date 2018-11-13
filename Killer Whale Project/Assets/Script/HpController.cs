@@ -10,18 +10,20 @@ public class HpController : MonoBehaviour {
     //現在値
     [SerializeField]
     public float currentHP;
-    GameObject Hp;
+    HpBarController Hp;
 
     public Button button;
+    private void Awake()
+    {
+        Hp = GetComponent<HpBarController>();
+    }
     private void Start()
     {
         button.gameObject.SetActive(false);
-        Hp = GameObject.Find("GameObject"); 
     }
-
     private void Update()
     {
-        Hp.GetComponent<HpBarController>().HPDown(currentHP,maxHP);
+        Hp.HPDown(currentHP,maxHP);
     }
 
     private void FixedUpdate()
