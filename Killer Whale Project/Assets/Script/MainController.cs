@@ -90,5 +90,10 @@ public class MainController : MonoBehaviour
     public void ResultButtonClicked()
     {
         SceneManager.LoadScene("result");
+        GameReset();
+    }
+    private void GameReset()
+    {
+        
     }
 }
