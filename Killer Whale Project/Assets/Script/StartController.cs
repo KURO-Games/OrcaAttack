@@ -6,10 +6,12 @@ using UnityEngine.SceneManagement;
 
 public class StartController : MonoBehaviour
 {
+    [SerializeField]
+    private string scene= "main";
 
     public void MainButtonClicked()
     {
-        SceneManager.LoadScene("main");
+        SceneManager.LoadScene(scene);
         GetComponent<HpController>().currentHP = GetComponent<HpController>().maxHP;
     }
 
@@ -19,6 +21,9 @@ public class StartController : MonoBehaviour
     }
     void Update()
     {
-
+        if(Input.GetMouseButtonDown(0))
+        {
+            MainButtonClicked();
+        }
     }
 }

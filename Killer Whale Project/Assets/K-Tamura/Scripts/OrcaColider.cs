@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class OrcaColider : MonoBehaviour {
     private GameObject orcacolider;
+    AudioManager audio;
 	// Use this for initialization
 	void Start () {
         //orcacolider = GetComponent<Collider>().collider;
+        audio = GetComponent<AudioManager>();
 	}
 	
 	// Update is called once per frame
@@ -15,6 +17,9 @@ public class OrcaColider : MonoBehaviour {
 	}
     private void OnCollisionEnter(Collision collision)
     {
-        
+        audio.Soundsman1(0);
+        audio.SoundsMan2(1);
+
+        Destroy(collision.gameObject);
     }
 }

@@ -17,20 +17,24 @@ public class OrcaManager : MonoBehaviour
     private Vector3 playerPos, mousePos;
     Touch touch;
     Debuglog debug = new Debuglog();
-    bool xbutton = false;
-    Vector3 mouseposition = Input.mousePosition;
+    [SerializeField]
+    bool xbutton = true;
+    Vector3 mouseposition;
 
     Vector3 mouselocal;
     Vector3 worldTouchPosition = Vector3.zero;
     private Vector3 firstMousePos, lastMousePos;
     private Vector3 mousemovemt;
-
+    [SerializeField]
+    private float[] Addforces;
+    
     //Vector3 mouseposition = Input.mousePosition;
     // Use this for initialization
     void Start()
     {
         Orca.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
         Orca.GetComponent<Rigidbody>().isKinematic = true;
+        
 
     }
 
@@ -86,7 +90,7 @@ public class OrcaManager : MonoBehaviour
         {
             //Vector3 touchPosition = touch.position;
             GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionY;
-
+            GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
 
             if (Input.GetMouseButtonDown(0))
             {
@@ -138,11 +142,32 @@ public class OrcaManager : MonoBehaviour
                 GetComponent<Rigidbody>().isKinematic = true;
                 Debug.Log("LastMousePos" + lastMousePos);
                 Debug.Log("mouseLocal" + mouselocal);
+               // xbutton = true;
+            }
+
+
+        }else{
+            if(Input.GetMouseButtonDown(0)){
+                firstMousePos = Input.mousePosition;
+
+            }
+            if(Input.GetMouseButtonUp(0)){
+                lastMousePos = Input.mousePosition;
+                mousePos.y = firstMousePos.y - lastMousePos.y;
+                GetComponent<Rigidbody>().isKinematic = false;
+                Orca.GetComponent<Rigidbody>().AddForce(0,20000,2);
             }
 
         }
+
+
+
+
         //Debug.Log(worldTouchPosition);
     }
+
+
+
     private void mouseMovDistance()
     {
         mousemovemt = Input.mousePosition;

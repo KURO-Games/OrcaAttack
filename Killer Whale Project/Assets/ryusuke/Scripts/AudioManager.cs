@@ -6,14 +6,31 @@ using UnityEngine;
 public class AudioManager : MonoBehaviour {
     public AudioSource sound1;
     public AudioSource sound2;
+    [SerializeField]
+    AudioSource[] audioSources ;
+    [SerializeField]
+    AudioClip[] AudioClips;
 
-    void Start()
+    void Awake()
     {
-        AudioSource[] audioSources = GetComponents<AudioSource>();
+       audioSources = GetComponents<AudioSource>();
     }
+
+    public void Soundsman1(int i)
+    {
+        sound1.clip = AudioClips[i];
+        sound1.Play();
+    }
+    public void SoundsMan2(int i)
+    {
+        sound2.clip = AudioClips[i];
+        sound2.Play();
+    }
+
 
     void OnCollisionEnter(Collision col)
     {
+        //sound1.clip=
         if (col.gameObject.tag == "orca")
         {
             sound1.PlayOneShot(sound1.clip);
