@@ -13,9 +13,18 @@ public class ScoreController : MonoBehaviour {
         score = 0;
         SetScore();
     }
-    void OnCollisionEnter (Collision collision)
+    private void OnCollisionEnter(Collision other)
     {
-        string yourTag = collision.gameObject.tag;
+        if (other.gameObject.name == "FeedPrefab")
+        {
+            GameObject.Destroy(other.gameObject);
+            AddScore();
+
+        }
+    }
+    public void AddScore ()
+    {
+        string yourTag = gameObject.tag;
         if(yourTag == "Feed1")
         {
             score += 20;
@@ -25,8 +34,9 @@ public class ScoreController : MonoBehaviour {
             score += 40;
         }
         SetScore();
+
 	}
-    void SetScore()
+    public void SetScore()
     {
         scoreText.text = string.Format("Score:{0}", score);
     }
