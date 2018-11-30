@@ -26,6 +26,7 @@ public class FeedGenerator : MonoBehaviour
         {
                 this.delta = 0;
                 GameObject go = Instantiate(FeedPrefab) as GameObject;
+                FeedPrefab.tag = "Feed1";
                 go.name = go.name.Replace("(Clone)", "");
                 float px = Random.Range(-3, 3);
                 float py = Random.Range(3, 5);
@@ -50,7 +51,6 @@ public class FeedGenerator : MonoBehaviour
        
         for (int i = 0; i < 4; i++)
         {
-            counter += 4;
             delta = span+1;
             Spawn();
             counter = 0;
