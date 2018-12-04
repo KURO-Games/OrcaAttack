@@ -89,6 +89,14 @@ public class FeedGenerator : MonoBehaviour
         startCounter = 0;
         this.FeedPrefab = GameObject.Find("FeedPrefab");
     }
+
+    void OnCollisionEnter(Collision other) {
+        if(other.gameObject.name == "Orca_noShadow")
+        {
+            GameObject.Destroy(this.gameObject);
+            GetComponent<ScoreController>().AddScore();
+        }
+    }
     void Update()
     {
         if (counter < 4)
