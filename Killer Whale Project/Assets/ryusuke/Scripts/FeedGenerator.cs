@@ -67,18 +67,7 @@ public class FeedGenerator : MonoBehaviour
 
     }
     private void Start()
-
-    {/*
-        for (int i = 0; i < 4; i++)
-        {
-            GameObject go = Instantiate(FeedPrefab) as GameObject;
-            go.name = go.name.Replace("(Clone)", "");
-            float px = Random.Range(-3, 3);
-            float py = Random.Range(3, 5);
-            go.transform.position = new Vector3(px, py, 0);
-            //transform.Translate(1 * Speed * Time.deltaTime, 0, 0);
-        }
-        */
+    {
         //StartSpawn();
         for(int i = 0; i < 4; i++)
         {

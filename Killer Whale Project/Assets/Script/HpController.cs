@@ -25,12 +25,24 @@ public class HpController : MonoBehaviour {
     {
         Hp.HPDown(currentHP,maxHP);
     }
+    public void CurrentHP(int Heal)
+    {
+        if (maxHP > currentHP + Heal)
+        {
+            //Debug.Log("低い");
+            currentHP = currentHP + Heal;
+        }else if (maxHP < currentHP + Heal)
+        {
+            //Debug.Log("高い");
+            currentHP = maxHP;
+        }
+    }
 
     private void FixedUpdate()
     {
         if (0 <= currentHP)
         {
-            currentHP = maxHP - Time.time * 50;
+            currentHP = maxHP - Time.time * 2;
         }
         else
         {
