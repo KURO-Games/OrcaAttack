@@ -15,6 +15,7 @@ public class FeedGenerator : MonoBehaviour
     private int counter = 0;
     [SerializeField]
     AudioManager Audio;
+    maware_asika asikaScript;
     private void Awake()
     {
         Audio = GetComponent<AudioManager>();
@@ -24,19 +25,28 @@ public class FeedGenerator : MonoBehaviour
         this.delta += Time.deltaTime;
         if (this.delta > this.span)
         {
-                this.delta = 0;
-                GameObject go = Instantiate(FeedPrefab) as GameObject;
-                go.name = go.name.Replace("(Clone)", "");
-                float px = Random.Range(-3, 3);
-                float py = Random.Range(3, 5);
-                go.transform.position = new Vector3(px, py, 0);
-                counter++;
+            this.delta = 0;
+            GameObject go = Instantiate(FeedPrefab) as GameObject;
+            asikaScript = go.GetComponent<maware_asika>();
+            go.name = go.name.Replace("(Clone)", "");
+            float px = Random.Range(-3, 3);
+            float py = Random.Range(3, 5);
+            go.transform.position = new Vector3(px, py, 0);
+            counter++;
+            // ランダムに回転させる
+            if (Random.Range(0, 2) == 0)
+            {
+                asikaScript.FripX();
+            }    
         }
-
     }
+
     private void Start()
 
-    {/*
+    {
+        RandomMove();
+        
+        /*
         for (int i = 0; i < 4; i++)
         {
             GameObject go = Instantiate(FeedPrefab) as GameObject;
@@ -64,6 +74,8 @@ public class FeedGenerator : MonoBehaviour
         }
     }
 
-
-
+    public void RandomMove()
+    {
+        var x = Random.Range(10f, 0);
+    }
 }
