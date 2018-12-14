@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class StartController : MonoBehaviour
 {
     [SerializeField]
-    private string scene= "main";
+    private int scene= 1;
 
     public void MainButtonClicked()
     {

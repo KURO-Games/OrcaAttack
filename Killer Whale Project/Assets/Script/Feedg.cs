@@ -26,7 +26,7 @@ public class Feedg : MonoBehaviour {
         float r2 = 1.0f;
         if (d < r1 + r2)
         {
-            FindObjectOfType<ScoreController>().AddScore(20);
+            FindObjectOfType<ScoreController>().AddScore();
             FindObjectOfType<HpController>().CurrentHP(20);
             Destroy(gameObject);
         }

@@ -16,7 +16,7 @@ public class AudioManager : MonoBehaviour {
        audioSources = GetComponents<AudioSource>();
     }
 
-    public void Soundsman1(int i)
+    public void SoundsMan1(int i)
     {
         sound1.clip = AudioClips[i];
         sound1.Play();
