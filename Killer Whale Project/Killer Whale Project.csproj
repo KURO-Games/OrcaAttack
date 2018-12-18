@@ -98,10 +98,9 @@
     <Compile Include="Assets\Script\ResultController.cs" />
     <Compile Include="Assets\Script\ScoreController.cs" />
     <Compile Include="Assets\Script\StartController.cs" />
-    <Compile Include="Assets\ryusuke\Scripts\AnimationController.cs" />
+    <Compile Include="Assets\ryusuke\Animation\maware2.cs" />
     <Compile Include="Assets\ryusuke\Scripts\AudioManager.cs" />
     <Compile Include="Assets\ryusuke\Scripts\FeedGenerator.cs" />
-    <Compile Include="Assets\ryusuke\Scripts\maware2.cs" />
     <Compile Include="Assets\ryusuke\Scripts\maware_asika.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
