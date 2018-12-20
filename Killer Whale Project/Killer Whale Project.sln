@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
+# Visual Studio for Mac
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Killer Whale Project", "Killer Whale Project.csproj", "{FC0D3E56-AC16-9FA9-D755-21ADF9AE2927}"
 EndProject
 Global

@@ -111,15 +111,11 @@
     <Compile Include="Assets\K-Tamura\Scripts\OrcaButtonManager.cs" />
     <Compile Include="Assets\K-Tamura\Scripts\OrcaColider.cs" />
     <Compile Include="Assets\K-Tamura\Scripts\OrcaManager.cs" />
-    <Compile Include="Assets\K-Tamura\Scripts\OrcaManager2.cs" />
-    <Compile Include="Assets\Script\Feedg.cs" />
     <Compile Include="Assets\Script\HpBarController.cs" />
     <Compile Include="Assets\Script\HpController.cs" />
     <Compile Include="Assets\Script\MainController.cs" />
     <Compile Include="Assets\Script\ResultController.cs" />
-    <Compile Include="Assets\Script\ScoreController.cs" />
     <Compile Include="Assets\Script\StartController.cs" />
-    <Compile Include="Assets\ryusuke\Animation\maware2.cs" />
     <Compile Include="Assets\ryusuke\Scripts\AudioManager.cs" />
     <Compile Include="Assets\ryusuke\Scripts\FeedGenerator.cs" />
     <Compile Include="Assets\ryusuke\Scripts\maware_asika.cs" />
