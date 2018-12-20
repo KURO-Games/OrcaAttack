@@ -1,4 +1,4 @@
-﻿using System.Collections;using System.Collections.Generic;using UnityEngine;using UnityEngine.Apple;using UnityEngine.UI;
+﻿using System.Collections;using System.Collections.Generic;using UnityEngine;using UnityEngine.UI;
 
 public class OrcaManager2 : MonoBehaviour {
     Vector3 worlddir,mouseposition,firsttouch, secondrelease,thr, point = new Vector3();
