@@ -19,7 +19,8 @@ public class Feedg : MonoBehaviour {
     {
         transform.Translate(1 * Speed * Time.deltaTime, 0, 0);
         //画面外で反転
-        if (transform.position.x < -7 || transform.position.x >7)
+        if (transform.position.x <= -7 || transform.position.x >=7)
+
         {
             Speed = -1 * Speed;
             Vector3 scale = transform.localScale;
