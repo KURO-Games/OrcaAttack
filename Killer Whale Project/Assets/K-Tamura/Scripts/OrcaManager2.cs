@@ -1,14 +1,14 @@
 ﻿using System.Collections;using System.Collections.Generic;using UnityEngine;using UnityEngine.UI;
 
 public class OrcaManager2 : MonoBehaviour {
-    Vector3 worlddir,mouseposition,firsttouch, secondrelease,thr, mod = new Vector3(), point = new Vector3();
+    Vector3 worlddir,mouseposition,firsttouch, secondrelease,thr,pos, mod = new Vector3(), point = new Vector3();
     [SerializeField]private GameObject Orca;
     [SerializeField]private float OrcaSpeed=1f,orcahippari=100f,modori=1f*-1;
-    [SerializeField]public static bool orcayoko, orcatate;
+    [SerializeField]public static bool orcayoko, orcatate,orcamodori;
     private Camera cam; bool botton=false;
     public static string Nam;
     void Start () {cam = Camera.main;mouseposition = Vector3.zero;worlddir = Vector3.zero;orcayoko = true;orcatate = false;}
-    void Update () { Touchpanel();Mousehantei();
+    void Update () { Touchpanel();Mousehantei();modoriins();
         //Debug.Log("Y"+orcayoko+" T"+orcatate+" F"+firsttouch+" S"+secondrelease+" W"+worlddir+" M"+mouseposition+" O"+Orca.transform.localPosition);
         if (orcayoko == true && orcatate == false)OrcaYokoIdo();
         if (orcatate == true && orcayoko == false)OrcaTateIdo();
@@ -45,12 +45,22 @@ public class OrcaManager2 : MonoBehaviour {
         if(Input.GetMouseButtonUp(0)){//各判定mouseのposition_vector3(final)
             thr = firsttouch - secondrelease;}
     }
-    private void OnCollisionEnter(Collision collision)
-    {if (collision.gameObject.name=="orcaWall"){orcatate = false;orcayoko = false;
+    void modoriins()
+    {
+        pos = Orca.transform.position;
+        if (orcamodori == true)
+        {
             if (Input.GetMouseButtonDown(0))
-            {if (Orca.transform.localPosition.y != -9f){mod.y = modori;Orca.transform.localPosition = mod;}
-                else orcayoko = true;
+
+            {
+                if (pos.y >= -9f) { pos.y -= modori; Orca.transform.localPosition = pos; }
+                else { orcayoko = true; orcamodori = false; }
             }
+        }
+    }
+    private void OnCollisionEnter(Collision collision)
+    {if (collision.gameObject.name=="orcaWall"){orcatate = false;orcayoko = false;orcamodori = true;
+
         }
     }
 }
