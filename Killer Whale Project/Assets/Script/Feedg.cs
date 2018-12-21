@@ -10,7 +10,7 @@ public class Feedg : MonoBehaviour {
     private HpController Hpcontroller;
     private FeedGenerator feedGenerator;
     void Start() {
-        this.player = GameObject.Find("player");
+        this.player = GameObject.Find("OrcaPrefab");
         scoreController = FindObjectOfType<ScoreController>();
         Hpcontroller = FindObjectOfType<HpController>();
         feedGenerator = FindObjectOfType<FeedGenerator>();

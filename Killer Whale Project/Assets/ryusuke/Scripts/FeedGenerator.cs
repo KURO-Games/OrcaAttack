@@ -33,7 +33,7 @@ public class FeedGenerator : MonoBehaviour
             GameObject go = Instantiate(FeedPrefab) as GameObject;
             go.name = go.name.Replace("(Clone)", "");
             float px = Random.Range(-3, 3);
-            float py = Random.Range(3, 6);
+            float py = Random.Range(10, 13);
             go.transform.position = new Vector3(px, py, 16.1f);
             Vector3 pos = transform.position;
             transform.position = pos;

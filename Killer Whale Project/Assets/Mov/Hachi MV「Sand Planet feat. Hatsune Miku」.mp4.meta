@@ -53,7 +53,7 @@ VideoClipImporter:
       bitrateMode: 2
       spatialQuality: 2
   output:
-    format: 0
+    format: 1
     settings:
       enableTranscoding: 1
       codec: 0
@@ -66,11 +66,11 @@ VideoClipImporter:
     encodedWidth: 1280
     encodedHeight: 720
     encodedStartFrame: 0
-    encodedEndFrame: 5723
+    encodedEndFrame: 5738
     streamedResource:
       source: library/metadata/24/246b6220eead84310adb4d04de2bc4c6.resource
       offset: 0
-      size: 109776669
+      size: 100710550
   userData: 
   assetBundleName: 
   assetBundleVariant: 

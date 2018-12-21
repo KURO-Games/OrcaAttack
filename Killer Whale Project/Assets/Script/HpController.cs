@@ -20,6 +20,7 @@ public class HpController : MonoBehaviour {
     private void Start()
     {
         button.gameObject.SetActive(false);
+        currentHP = maxHP;
     }
     private void Update()
     {
