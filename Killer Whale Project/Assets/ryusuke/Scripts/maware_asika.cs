@@ -31,9 +31,9 @@ public class maware_asika : MonoBehaviour {
         //    GetComponent<Rigidbody>().isKinematic = true;
         //}
 
-
+        Debug.Log(col.gameObject.name);
     
-        if (col.gameObject.tag == "wall" || col.gameObject.tag == "wall2")
+        if (col.gameObject.tag == "wall")// || col.gameObject.tag == "wall2")
         {
 
             FripX();

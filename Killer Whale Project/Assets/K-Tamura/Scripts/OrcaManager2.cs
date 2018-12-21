@@ -1,9 +1,9 @@
 ﻿using System.Collections;using System.Collections.Generic;using UnityEngine;using UnityEngine.UI;
 
 public class OrcaManager2 : MonoBehaviour {
-    Vector3 worlddir,mouseposition,firsttouch, secondrelease,thr, point = new Vector3();
+    Vector3 worlddir,mouseposition,firsttouch, secondrelease,thr, mod = new Vector3(), point = new Vector3();
     [SerializeField]private GameObject Orca;
-    [SerializeField]private float OrcaSpeed=1f,orcahippari=100f;
+    [SerializeField]private float OrcaSpeed=1f,orcahippari=100f,modori=1f*-1;
     [SerializeField]public static bool orcayoko, orcatate;
     private Camera cam; bool botton=false;
     public static string Nam;
@@ -44,5 +44,13 @@ public class OrcaManager2 : MonoBehaviour {
             secondrelease.x = mouseposition.x;secondrelease.y = mouseposition.y;secondrelease.z = 0;}
         if(Input.GetMouseButtonUp(0)){//各判定mouseのposition_vector3(final)
             thr = firsttouch - secondrelease;}
+    }
+    private void OnCollisionEnter(Collision collision)
+    {if (collision.gameObject.name=="orcaWall"){orcatate = false;orcayoko = false;
+            if (Input.GetMouseButtonDown(0))
+            {if (Orca.transform.localPosition.y != -9f){mod.y = modori;Orca.transform.localPosition = mod;}
+                else orcayoko = true;
+            }
+        }
     }
 }
