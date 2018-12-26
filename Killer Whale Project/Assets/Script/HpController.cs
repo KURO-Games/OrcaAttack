@@ -20,33 +20,27 @@ public class HpController : MonoBehaviour {
     private void Start()
     {
         button.gameObject.SetActive(false);
+        currentHP = maxHP;
     }
     private void Update()
     {
         Hp.HPDown(currentHP,maxHP);
+        if (0 <= currentHP)
+        {
+            currentHP -= Time.deltaTime * 2;
+        }else{
+            button.gameObject.SetActive(true);
+        }
     }
     public void CurrentHP(int Heal)
     {
-        if (maxHP > currentHP + Heal)
+        if (maxHP > currentHP)
         {
-            //Debug.Log("低い");
             currentHP = currentHP + Heal;
-        }else if (maxHP < currentHP + Heal)
-        {
-            //Debug.Log("高い");
-            currentHP = maxHP;
-        }
-    }
-
-    private void FixedUpdate()
-    {
-        if (0 <= currentHP)
-        {
-            currentHP = maxHP - Time.time * 2;
-        }
-        else
-        {
-            button.gameObject.SetActive(true);
+            if (maxHP < currentHP)
+            {
+                currentHP = maxHP;
+            }
         }
     }
 }

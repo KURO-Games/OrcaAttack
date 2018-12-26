@@ -6,36 +6,18 @@ using UnityEngine.UI;
 public class ScoreController : MonoBehaviour {
 
     public Text scoreText;
-    private int score = 0;
+    private int score;
 
     private void Start()
     {
-        this.score = 0;
-        SetScore();
+        score = 0;
     }
-    private void OnCollisionEnter(Collision other)
+    public void AddScore (int point)
     {
-        if (other.gameObject.name == "FeedPrefab")
-        {
-            GameObject.Destroy(other.gameObject);
-        }
+        score = score + point;
     }
-    public void AddScore ()
+    private void Update()
     {
-        string yourTag = gameObject.tag;
-        if(yourTag == "Feed1")
-        {
-            this.score += 20;
-            Debug.Log("ok");
-        }
-        else if(yourTag == "Feed2")
-        {
-            this.score += 40;
-        }
-        SetScore();
-	}
-    public void SetScore()
-    {
-        scoreText.text = string.Format("Score:{0}", this.score);
+        scoreText.text = string.Format("Score:{0}", score);
     }
 }
