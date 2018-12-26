@@ -3,40 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class OrcaManager : MonoBehaviour
-{
+public class OrcaManager : MonoBehaviour { 
 
-    [SerializeField]
-    private float[] TouchPanel;
-    [SerializeField]
-    private int[] tokuten;
-    [SerializeField]
-    private GameObject Orca;
-    [SerializeField]
-    private float posy = 0f;
-    private Vector3 playerPos, mousePos;
-    Touch touch;
-    Debuglog debug = new Debuglog();
-    [SerializeField]
-    bool xbutton = true;
-    Vector3 mouseposition;
-
-    Vector3 mouselocal;
-    Vector3 worldTouchPosition = Vector3.zero;
-    private Vector3 firstMousePos, lastMousePos;
-    private Vector3 mousemovemt;
-    [SerializeField]
-    private float[] Addforces;
-    
-    //Vector3 mouseposition = Input.mousePosition;
-    // Use this for initialization
-    void Start()
-    {
-        Orca.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
-        Orca.GetComponent<Rigidbody>().isKinematic = true;
-        
-
-    }
 
     // Update is called once per frame
     void Update()
