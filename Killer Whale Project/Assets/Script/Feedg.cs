@@ -41,6 +41,7 @@ public class Feedg : MonoBehaviour {
                     Hpcontroller.CurrentHP(10);
                     //スコア追加
                     scoreController.AddScore(10);
+                    //餌生成関数を呼び出し
                     feedGenerator.GetComponent<FeedGenerator>().Revival();
                 }
                 else
@@ -50,6 +51,7 @@ public class Feedg : MonoBehaviour {
                     Hpcontroller.CurrentHP(20);
                     //スコア追加
                     scoreController.AddScore(20);
+                    //餌生成関数を呼び出し
                     feedGenerator.GetComponent<FeedGenerator>().Revival();
                 }
             }
