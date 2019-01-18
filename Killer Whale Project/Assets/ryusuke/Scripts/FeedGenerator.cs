@@ -6,14 +6,12 @@ public class FeedGenerator : MonoBehaviour
 {
     [SerializeField]
     private GameObject FeedPrefab;
-    [SerializeField]
-    private float span = 10.0f;
+    private float span = 5.0f;
     [SerializeField]
     private float delta = 0;
-    [SerializeField]
     private float Speed = 2;
     [SerializeField]
-    private int counter = 0;
+    public int counter = 0;
     [SerializeField]
     AudioManager Audio;
     public Vector3 pos;
@@ -22,18 +20,21 @@ public class FeedGenerator : MonoBehaviour
         Audio = GetComponent<AudioManager>();
     }
     /// <summary>
-    /// 餌生成
+    /// 餌(アシカ)生成
     /// </summary>
     private void Spawn()
     {
         this.delta += Time.deltaTime;
+        //deltaがspanの時間を上回ったとき
         if (this.delta > this.span)
         {
             this.delta = 0;
             GameObject go = Instantiate(FeedPrefab) as GameObject;
             go.name = go.name.Replace("(Clone)", "");
-            float px = Random.Range(-3, 3);
-            float py = Random.Range(10, 13);
+            //範囲でランダム生成
+            float px = Random.Range(-4, 4);
+            float py = Random.Range(8, 15);
+            //平行移動
             go.transform.position = new Vector3(px, py, 16.1f);
             Vector3 pos = transform.position;
             transform.position = pos;
@@ -42,24 +43,30 @@ public class FeedGenerator : MonoBehaviour
     }
     private void Start()
     {
-        //最初の四体呼び出し
-        for(int i = 0; i < 4; i++)
+        //最初の8体呼び出し(カウントされないようにしている)
+        for(int i = 0; i < 8; i++)
         {
             delta = span + 1;
             Spawn();
+            counter = 0;
         }
-        counter = 0;
     }
-    public void Count(int count)
+    public void Revival()
     {
-        counter -= count; 
+        counter--;
+        Invoke("F",0.5f);
+    }
+    private void F()
+    {
+        delta = span + 1;
+        Spawn();
     }
     void Update()
     {
-        //8体まで生成
-        if (counter < 4)
+        Spawn();
+        if(counter == -8)
         {
-            Spawn();
+            Start();
         }
     }
 }
