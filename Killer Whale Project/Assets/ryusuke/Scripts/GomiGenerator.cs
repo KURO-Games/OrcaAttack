@@ -44,13 +44,13 @@ public class GomiGenerator : MonoBehaviour
         {
             if (transform.position.y < 30)
             {
-                scoreController.AddScore(2);
-                Hpcontroller.CurrentHP(-2);
+                scoreController.AddScore(0);
+                Hpcontroller.CurrentHP(-20);
             }
             else
             {
-                scoreController.AddScore(2);
-                Hpcontroller.CurrentHP(-2);
+                scoreController.AddScore(0);
+                Hpcontroller.CurrentHP(-20);
             }
             //gomiGenerator.Count(1);
             Destroy(gameObject);
