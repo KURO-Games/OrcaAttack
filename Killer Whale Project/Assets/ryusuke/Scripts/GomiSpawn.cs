@@ -30,9 +30,9 @@ public class GomiSpawn : MonoBehaviour
             this.delta = 0;
             GameObject go = Instantiate(GomiPrefab) as GameObject;
             go.name = go.name.Replace("(Clone)", "");
-            float px = Random.Range(-20,20);
-            float py = Random.Range(30, 30);
-            go.transform.position = new Vector3(px, py, 70f);
+            float px = Random.Range(8,-6);
+            float py = Random.Range(8.5f, 8.5f);
+            go.transform.position = new Vector3(px, py, 16.1f);
             Vector3 pos = transform.position;
             transform.position = pos;
             counter++;
