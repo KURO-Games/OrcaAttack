@@ -8,7 +8,7 @@ public class OrcaButtonManager : MonoBehaviour {
     [SerializeField]
     private Text text;
     private GameObject omanege;
-    
+    /*
 	// Use this for initialization
 	void Start () {
         text.text = "決定";
@@ -34,4 +34,5 @@ public class OrcaButtonManager : MonoBehaviour {
         }
 
     }
+    */
 }

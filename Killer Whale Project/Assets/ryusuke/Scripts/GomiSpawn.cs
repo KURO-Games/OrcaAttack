@@ -33,6 +33,7 @@ public class GomiSpawn : MonoBehaviour
             float px = Random.Range(8,-6);
             float py = Random.Range(8.5f, 8.5f);
             go.transform.position = new Vector3(px, py, 16.1f);
+            this.transform.localScale = new Vector3(0.5f,0.5f,0.5f);
             Vector3 pos = transform.position;
             transform.position = pos;
             counter++;

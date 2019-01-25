@@ -49,7 +49,7 @@ public class EsaController : MonoBehaviour {
                 scoreController.AddScore(20);
                 Hpcontroller.CurrentHP(20);
             }
-            feedGenerator.Count(1);
+            //feedGenerator.Count(1);
             Destroy(gameObject);
         }
     }
