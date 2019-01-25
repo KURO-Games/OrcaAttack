@@ -28,29 +28,37 @@ public class Feedg : MonoBehaviour {
             transform.localScale = scale;
         }
     }
-    void Update () {
-        Movement();
-        //当たり判定
-        Vector2 p1 = transform.position;
-        Vector2 p2 = this.player.transform.position;
-        Vector2 dir = p1 - p2;
-        float d = dir.magnitude;
-        float r1 = 0.5f;
-        float r2 = 1.0f;
-        if (d < r1 + r2)
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.tag == "Player")
         {
-            if (transform.position.y<4)
+            if(OrcaManager2.orcamodori == false)
             {
-                scoreController.AddScore(10);
-                Hpcontroller.CurrentHP(10);
+                if (transform.position.y < 11)
+                {
+                    Debug.Log("10");
+                    //HP回復
+                    Hpcontroller.CurrentHP(10);
+                    //スコア追加
+                    scoreController.AddScore(10);
+                    //餌生成関数を呼び出し
+                    feedGenerator.GetComponent<FeedGenerator>().Revival();
+                }
+                else
+                {
+                    Debug.Log("20");
+                    //HP回復
+                    Hpcontroller.CurrentHP(20);
+                    //スコア追加
+                    scoreController.AddScore(20);
+                    //餌生成関数を呼び出し
+                    feedGenerator.GetComponent<FeedGenerator>().Revival();
+                }
             }
-            else
-            {
-                scoreController.AddScore(20);
-                Hpcontroller.CurrentHP(20);
-            }
-            feedGenerator.Count(1);
             Destroy(gameObject);
         }
+    }
+    void Update () {
+        Movement();
     }
 }

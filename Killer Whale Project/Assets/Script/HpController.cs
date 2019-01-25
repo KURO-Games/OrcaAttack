@@ -27,7 +27,7 @@ public class HpController : MonoBehaviour {
         Hp.HPDown(currentHP,maxHP);
         if (0 <= currentHP)
         {
-            currentHP -= Time.deltaTime * 2;
+            currentHP -= Time.deltaTime * 4;
         }else{
             button.gameObject.SetActive(true);
         }
