@@ -10,6 +10,7 @@ public class MainController : MonoBehaviour
     GameObject prefab;
     int count = 0;
     int max = 5;
+    OrcaManager2 OrcaManager;
 
     private Vector3 touchStartPos;
     private Vector3 touchEndPos;
@@ -17,6 +18,7 @@ public class MainController : MonoBehaviour
     void Start()
     {
         InvokeRepeating("Generate", 10, 10);
+        OrcaManager = GetComponent<OrcaManager2>();
     }
     void Generate()
     {
@@ -94,6 +96,8 @@ public class MainController : MonoBehaviour
     }
     private void GameReset()
     {
-        
+        OrcaManager2.orcayoko = true;
+        OrcaManager2.orcatate = true;
+        OrcaManager2.orcamodori = true;
     }
 }

@@ -5,7 +5,7 @@ public class OrcaManager2 : MonoBehaviour
     Vector3 worlddir=new Vector3(0,-5f,16.1f), mouseposition, firsttouch = new Vector3(0, -5f, 16.1f), secondrelease, thr, pos, mod = new Vector3(), point = new Vector3(), orcafirstpos = new Vector3(0, -5f, 16.1f);
     [SerializeField] private GameObject Orca;
     [SerializeField] private float OrcaSpeed = 1f, orcahippari = 100f, modori = 1f * -1;
-    [SerializeField] public bool orcayoko, orcatate, orcamodori;
+    [SerializeField] public static bool orcayoko, orcatate, orcamodori;
     private Camera cam; bool botton = false;
     public static string Nam;
     [SerializeField]
@@ -82,7 +82,7 @@ public class OrcaManager2 : MonoBehaviour
     /// <summary>
     /// オルカ戻り処理
     /// </summary>
-    void modoriins()
+    public void modoriins()
     {
         pos = Orca.transform.position;
         if (orcamodori == true)
