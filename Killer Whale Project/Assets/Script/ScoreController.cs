@@ -18,6 +18,9 @@ public class ScoreController : MonoBehaviour {
     }
     private void Update()
     {
-        scoreText.text = string.Format("Score:{0}", score);
+        if(scoreText != null)
+        {
+            scoreText.text = string.Format("Score:{0}", score);
+        }
     }
 }

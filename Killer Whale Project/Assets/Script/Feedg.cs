@@ -38,18 +38,20 @@ public class Feedg : MonoBehaviour {
                 {
                     Debug.Log("10");
                     //HP回復
-                    Hpcontroller.CurrentHP(10);
+                    Hpcontroller.CurrentHP(5);
                     //スコア追加
                     scoreController.AddScore(10);
+                    //餌生成関数を呼び出し
                     feedGenerator.GetComponent<FeedGenerator>().Revival();
                 }
                 else
                 {
                     Debug.Log("20");
                     //HP回復
-                    Hpcontroller.CurrentHP(20);
+                    Hpcontroller.CurrentHP(10);
                     //スコア追加
                     scoreController.AddScore(20);
+                    //餌生成関数を呼び出し
                     feedGenerator.GetComponent<FeedGenerator>().Revival();
                 }
             }

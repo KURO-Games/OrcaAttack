@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Timers;
 
 public class FeedGenerator : MonoBehaviour
 {
@@ -51,19 +52,24 @@ public class FeedGenerator : MonoBehaviour
             counter = 0;
         }
     }
+    /// <summary>
+    ///以下調整中 
+    /// </summary>
     public void Revival()
     {
-        counter--;
+        //0.5秒後に餌生成
         Invoke("F",0.5f);
     }
     private void F()
     {
+        counter--;
         delta = span + 1;
         Spawn();
     }
     void Update()
     {
         Spawn();
+        //餌が0になったら盤面リセット(調整中)
         if(counter == -8)
         {
             Start();
