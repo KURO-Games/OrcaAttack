@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GomiSpawn : MonoBehaviour
+public class UmidoriSpawn : MonoBehaviour
 {
     [SerializeField]
-    private GameObject GomiPrefab;
+    private GameObject UmidoriPrefab;
     [SerializeField]
-    private float span = 10.0f;
+    private float span = 0;
     [SerializeField]
     private float delta = 0;
     [SerializeField]
@@ -28,37 +28,37 @@ public class GomiSpawn : MonoBehaviour
         if (this.delta > this.span)
         {
             this.delta = 0;
-            GameObject go = Instantiate(GomiPrefab) as GameObject;
+            GameObject go = Instantiate(UmidoriPrefab) as GameObject;
             go.name = go.name.Replace("(Clone)", "");
-            float px = Random.Range(8,-6);
-            float py = Random.Range(8.5f, 8.5f);
+            float px = Random.Range(8, -6);
+            float py = Random.Range(2f, 2f);
             go.transform.position = new Vector3(px, py, 16.1f);
-            this.transform.localScale = new Vector3(0.5f,0.5f,0.5f);
+            //this.transform.localScale = new Vector3(0.2f, 0.2f, 0.2f);
             Vector3 pos = transform.position;
             transform.position = pos;
             counter++;
         }
     }
-        private void Start()
+    private void Start()
+    {
+        //最初の四体呼び出し
+        for (int i = 0; i < 2; i++)
         {
-            //最初の四体呼び出し
-            for (int i = 0; i < 5; i++)
-            {
-                delta = span + 1;
-                Spawn();
-            }
-            counter = 0;
+            delta = span + 1;
+            Spawn();
         }
-        public void Count(int count)
+        counter = 0;
+    }
+    public void Count(int count)
+    {
+        counter -= count;
+    }
+    void Update()
+    {
+        //4体まで生成
+        if (counter < 1)
         {
-            counter -= count;
-        }
-        void Update()
-        {
-            //8体まで生成
-            if (counter < 4)
-            {
-                Spawn();
-            }
+            Spawn();
         }
     }
+}

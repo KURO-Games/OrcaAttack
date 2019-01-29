@@ -26,10 +26,6 @@ public class maware_asika : MonoBehaviour {
     }
     private void OnCollisionEnter(Collision col)
     {
-        //if (col.gameObject.tag == "wall" || col.gameObject.tag == "wall2")
-        //{
-        //    GetComponent<Rigidbody>().isKinematic = true;
-        //}
 
         Debug.Log(col.gameObject.name);
     
@@ -48,3 +44,8 @@ public class maware_asika : MonoBehaviour {
         Speed = -1 * Speed;
     }
 }
+
+//if (col.gameObject.tag == "wall" || col.gameObject.tag == "wall2")
+//{
+//    GetComponent<Rigidbody>().isKinematic = true;
+//}
