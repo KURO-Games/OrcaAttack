@@ -16,6 +16,7 @@ public class FeedGenerator : MonoBehaviour
     [SerializeField]
     AudioManager Audio;
     public Vector3 pos;
+    GameObject FeedPrefabChild;
     private void Awake()
     {
         Audio = GetComponent<AudioManager>();
@@ -32,6 +33,7 @@ public class FeedGenerator : MonoBehaviour
             this.delta = 0;
             GameObject go = Instantiate(FeedPrefab) as GameObject;
             go.name = go.name.Replace("(Clone)", "");
+            go.transform.parent = FeedPrefabChild.transform;
             //範囲でランダム生成
             float px = Random.Range(-4, 4);
             float py = Random.Range(8, 15);
@@ -44,7 +46,7 @@ public class FeedGenerator : MonoBehaviour
     }
     private void Start()
     {
-        //最初の8体呼び出し(カウントされないようにしている)
+        FeedPrefabChild = GameObject.Find("FeedPrefabChild");       //最初の8体呼び出し(カウントされないようにしている)
         for(int i = 0; i < 8; i++)
         {
             delta = span + 1;
