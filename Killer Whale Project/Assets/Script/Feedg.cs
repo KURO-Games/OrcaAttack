@@ -8,12 +8,12 @@ public class Feedg : MonoBehaviour {
     private GameObject player;
     private ScoreController scoreController;
     private HpController Hpcontroller;
-    private FeedGenerator feedGenerator;
+    public Randoms randoms;
     void Start() {
         this.player = GameObject.Find("OrcaPrefab");
         scoreController = FindObjectOfType<ScoreController>();
         Hpcontroller = FindObjectOfType<HpController>();
-        feedGenerator = FindObjectOfType<FeedGenerator>();
+        randoms = FindObjectOfType<Randoms>();
     }
     void Movement()
     {
@@ -42,7 +42,7 @@ public class Feedg : MonoBehaviour {
                     //スコア追加
                     scoreController.AddScore(10);
                     //餌生成関数を呼び出し
-                    feedGenerator.GetComponent<FeedGenerator>().Revival();
+                    randoms.Generate();
                 }
                 else
                 {
@@ -52,7 +52,7 @@ public class Feedg : MonoBehaviour {
                     //スコア追加
                     scoreController.AddScore(20);
                     //餌生成関数を呼び出し
-                    feedGenerator.GetComponent<FeedGenerator>().Revival();
+                    randoms.Generate();
                 }
             }
             Destroy(gameObject);
