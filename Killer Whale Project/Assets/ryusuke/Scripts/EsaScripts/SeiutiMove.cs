@@ -6,7 +6,7 @@ public class SeiutiMove : MonoBehaviour
 {
     Vector3 reverse;
     [SerializeField]
-    private float Speed = 3;
+    private float Speed = 1.5f;
 
 
     // Use this for initialization
@@ -25,7 +25,7 @@ public class SeiutiMove : MonoBehaviour
     {
         transform.Translate(1 * Speed * Time.deltaTime, 0, 0);
         //画面外で反転
-        if (transform.position.x <= -3.5 || transform.position.x >= 9)
+        if (transform.position.x <= -5 || transform.position.x >= 9)
 
         {
             Speed = -1 * Speed;
