@@ -22,7 +22,7 @@ public class GomiSpawn : MonoBehaviour
         Audio = GetComponent<AudioManager>();
     }
 
-    private void Spawn()
+    public void Spawn()
     {
         this.delta += Time.deltaTime;
         if (this.delta > this.span)
