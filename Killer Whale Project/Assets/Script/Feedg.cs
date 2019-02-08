@@ -32,28 +32,25 @@ public class Feedg : MonoBehaviour {
     {
         if(collision.gameObject.tag == "Player")
         {
-            if(OrcaManager2.orcamodori == false)
+            if (transform.position.y < 11)
             {
-                if (transform.position.y < 11)
-                {
-                    Debug.Log("10");
-                    //HP回復
-                    Hpcontroller.CurrentHP(5);
-                    //スコア追加
-                    scoreController.AddScore(10);
-                    //餌生成関数を呼び出し
-                    randoms.Generate();
-                }
-                else
-                {
-                    Debug.Log("20");
-                    //HP回復
-                    Hpcontroller.CurrentHP(10);
-                    //スコア追加
-                    scoreController.AddScore(20);
-                    //餌生成関数を呼び出し
-                    randoms.Generate();
-                }
+                Debug.Log("10");
+                //HP回復
+                Hpcontroller.CurrentHP(5);
+                //スコア追加
+                scoreController.AddScore(10);
+                //餌生成関数を呼び出し
+                randoms.Generate();
+            }
+            else
+            {
+                Debug.Log("20");
+                //HP回復
+                Hpcontroller.CurrentHP(10);
+                //スコア追加
+                scoreController.AddScore(20);
+                //餌生成関数を呼び出し
+                randoms.Generate();
             }
             Destroy(gameObject);
         }
