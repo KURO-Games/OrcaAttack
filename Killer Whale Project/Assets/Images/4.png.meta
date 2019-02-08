@@ -1,24 +1,12 @@
 fileFormatVersion: 2
-<<<<<<< HEAD:Killer Whale Project/Assets/Images/4.png.meta
-guid: 5de56766448964242b6503dca6b1718f
-timeCreated: 1549530637
-licenseType: Pro
-=======
-guid: 519694efe2bb2914788b151fbd8c01f4
-timeCreated: 1549442745
-licenseType: Free
->>>>>>> 4e422a6cfcc53e068f2d1f60f43b9743c7b28367:Killer Whale Project/Assets/Demigiant/DOTween/Editor/Imgs/Footer_dark.png.meta
+guid: 0c5881123f8f343b3af8ee0d0e892a0b
 TextureImporter:
   fileIDToRecycleName: {}
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 0
-<<<<<<< HEAD:Killer Whale Project/Assets/Images/4.png.meta
+    enableMipMap: 1
     sRGBTexture: 1
-=======
-    sRGBTexture: 0
->>>>>>> 4e422a6cfcc53e068f2d1f60f43b9743c7b28367:Killer Whale Project/Assets/Demigiant/DOTween/Editor/Imgs/Footer_dark.png.meta
     linearTexture: 0
     fadeOut: 0
     borderMipMap: 0
@@ -37,14 +25,14 @@ TextureImporter:
   textureFormat: 1
   maxTextureSize: 2048
   textureSettings:
-    filterMode: 1
-    aniso: 1
+    filterMode: -1
+    aniso: -1
     mipBias: -1
-    wrapMode: 1
-  nPOTScale: 0
+    wrapMode: -1
+  nPOTScale: 1
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 0
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -52,48 +40,16 @@ TextureImporter:
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 100
   alphaUsage: 1
-  alphaIsTransparency: 1
+  alphaIsTransparency: 0
   spriteTessellationDetail: -1
-<<<<<<< HEAD:Killer Whale Project/Assets/Images/4.png.meta
-  textureType: 8
-=======
-  textureType: 2
->>>>>>> 4e422a6cfcc53e068f2d1f60f43b9743c7b28367:Killer Whale Project/Assets/Demigiant/DOTween/Editor/Imgs/Footer_dark.png.meta
+  textureType: 0
   textureShape: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
   platformSettings:
   - buildTarget: DefaultTexturePlatform
-<<<<<<< HEAD:Killer Whale Project/Assets/Images/4.png.meta
     maxTextureSize: 2048
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-  - buildTarget: Standalone
-    maxTextureSize: 2048
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-  - buildTarget: iPhone
-    maxTextureSize: 2048
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-  - buildTarget: Android
-    maxTextureSize: 2048
-=======
-    maxTextureSize: 256
->>>>>>> 4e422a6cfcc53e068f2d1f60f43b9743c7b28367:Killer Whale Project/Assets/Demigiant/DOTween/Editor/Imgs/Footer_dark.png.meta
     textureFormat: -1
     textureCompression: 1
     compressionQuality: 50

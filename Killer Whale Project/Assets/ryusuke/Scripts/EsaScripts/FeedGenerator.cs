@@ -1,5 +1,5 @@
-<<<<<<< HEAD:Killer Whale Project/Assets/ryusuke/Scripts/EsaScripts/FeedGenerator.cs
-﻿using System.Collections;
+/*
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Timers;
@@ -77,15 +77,17 @@ public class FeedGenerator : MonoBehaviour
         }
     }
 }
-=======
-﻿using System.Collections;
-using System.Collections.Generic;
+*/
 using UnityEngine;
 
 public class FeedGenerator : MonoBehaviour
 {
     [SerializeField]
     private GameObject FeedPrefab;
+    [SerializeField]
+    private AudioClip[] audioClip;
+    [SerializeField]
+    private AudioSource[] sounds;
     [SerializeField]
     AudioManager Audio;
     public Vector3 pos;
@@ -107,6 +109,7 @@ public class FeedGenerator : MonoBehaviour
         go.transform.position = new Vector3(px, py, 16.1f);
         Vector3 pos = transform.position;
         transform.position = pos;
+        sounds[0].PlayOneShot(audioClip[0]);
     }
 }
->>>>>>> 4e422a6cfcc53e068f2d1f60f43b9743c7b28367:Killer Whale Project/Assets/ryusuke/Scripts/FeedGenerator.cs
+

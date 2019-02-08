@@ -9,13 +9,13 @@ public class Umidorig : MonoBehaviour
     private GameObject player;
     private ScoreController scoreController;
     private HpController Hpcontroller;
-    private FeedGenerator feedGenerator;
+    public Randoms randoms;
     void Start()
     {
         this.player = GameObject.Find("OrcaPrefab");
         scoreController = FindObjectOfType<ScoreController>();
         Hpcontroller = FindObjectOfType<HpController>();
-        feedGenerator = FindObjectOfType<FeedGenerator>();
+        randoms = FindObjectOfType<Randoms>();
     }
  
     private void OnCollisionEnter(Collision collision)
@@ -32,7 +32,7 @@ public class Umidorig : MonoBehaviour
                     //スコア追加
                     scoreController.AddScore(5);
                     //餌生成関数を呼び出し
-                    feedGenerator.GetComponent<FeedGenerator>().Revival();
+                    randoms.Generate();
                 }
                 else
                 {
@@ -42,7 +42,7 @@ public class Umidorig : MonoBehaviour
                     //スコア追加
                     scoreController.AddScore(5);
                     //餌生成関数を呼び出し
-                    feedGenerator.GetComponent<FeedGenerator>().Revival();
+                    randoms.Generate();
                 }
             }
             Destroy(gameObject);

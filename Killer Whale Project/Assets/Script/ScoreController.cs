@@ -16,15 +16,6 @@ public class ScoreController : MonoBehaviour {
     {
         score = score + point;
     }
-    private void Update()
-    {
-
-        if (scoreText != null)
-        {
-            scoreText.text = string.Format("Score:{0}", score);
-
-        }
-    }
     public int ScoreSend()
     {
         return score;

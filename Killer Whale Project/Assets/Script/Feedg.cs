@@ -30,9 +30,10 @@ public class Feedg : MonoBehaviour {
     }
     private void OnCollisionEnter(Collision collision)
     {
+        Debug.Log("attate");
         if(collision.gameObject.tag == "Player")
         {
-            if (transform.position.y < 11)
+            if (this.transform.position.y < 11)
             {
                 Debug.Log("10");
                 //HP回復

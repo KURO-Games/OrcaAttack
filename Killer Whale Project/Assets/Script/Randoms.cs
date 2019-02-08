@@ -5,8 +5,10 @@ using UnityEngine;
 public class Randoms : MonoBehaviour
 {
     public FeedGenerator feedGenerator;
-    public EsaController esaController;
+    public UmidoriSpawn umidoriSpawn;
+    public SeiutiSpawn seiutiSpawn;
     public GomiSpawn gomiSpawn;
+    public GomiSpawn2 gomiSpawn2;
     public int GarbageCounter = 0;
 
     public void Generate()
@@ -22,13 +24,13 @@ public class Randoms : MonoBehaviour
         else if (3000 < x && x <= 6000)
         {
             //差し替え用
-            feedGenerator.Spawn();
+            umidoriSpawn.Spawn();
             Debug.Log("餌2\n" + x);
         }
         else if (6000 < x && x <= 9000)
         {
             //差し替え用
-            feedGenerator.Spawn();
+            seiutiSpawn.Spawn();
             Debug.Log("餌3\n" + x);
         }
         else if (9000 < x && x <= 9700 && GarbageCounter <= 3)
@@ -40,7 +42,7 @@ public class Randoms : MonoBehaviour
         else if (9700 < x && x <= 10000 && GarbageCounter <= 3)
         {
             GarbageCounter++;
-            gomiSpawn.Spawn();
+            gomiSpawn2.Spawn();
             Debug.Log("ゴミ\n" + x + "\n" + GarbageCounter);
         }
         else

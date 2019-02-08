@@ -14,6 +14,7 @@ public class HpController : MonoBehaviour {
     HpBarController Hp;
     [SerializeField]
     private GameObject ScoreBoard;
+    ScoreBoard scoreboard;
 
 
     public Button button;
@@ -23,6 +24,7 @@ public class HpController : MonoBehaviour {
     }
     private void Start()
     {
+        scoreboard = GetComponent<ScoreBoard>();
         button.gameObject.SetActive(false);
         currentHP = maxHP;
     }
@@ -37,6 +39,7 @@ public class HpController : MonoBehaviour {
             OrcaManager2.orcatate = false;
             OrcaManager2.orcayoko = false;
             OrcaManager2.orcamodori = false;
+            scoreboard.ScoreBoardMove(0);
 
         }
     }

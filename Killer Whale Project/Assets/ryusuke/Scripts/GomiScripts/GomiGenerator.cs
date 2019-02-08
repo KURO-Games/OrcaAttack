@@ -9,50 +9,41 @@ public class GomiGenerator : MonoBehaviour
     private GameObject player;
     private ScoreController scoreController;
     private HpController Hpcontroller;
-    private GomiGenerator gomiGenerator;
+    private Randoms randoms;
     void Start()
     {
         this.player = GameObject.Find("OrcaPrefab");
         scoreController = FindObjectOfType<ScoreController>();
         Hpcontroller = FindObjectOfType<HpController>();
-        gomiGenerator = FindObjectOfType<GomiGenerator>();
+        randoms = FindObjectOfType<Randoms>();
     }
-    //void Movement()
-    //{
-    //    transform.Translate(1 * Speed * Time.deltaTime, 0, 0);
-    //    //画面外で反転
-    //    if (transform.position.x <= -7 || transform.position.x >= 7)
-
-    //    {
-    //        Speed = -1 * Speed;
-    //        Vector3 scale = transform.localScale;
-    //        scale.x = -scale.x;
-    //        transform.localScale = scale;
-    //    }
-    //}
-    void Update()
+    private void OnCollisionEnter(Collision collision)
     {
-        //Movement();
-        //当たり判定
-        Vector2 p1 = transform.position;
-        Vector2 p2 = this.player.transform.position;
-        Vector2 dir = p1 - p2;
-        float d = dir.magnitude;
-        float r1 = 0.5f;
-        float r2 = 1.0f;
-        if (d < r1 + r2)
+        if (collision.gameObject.tag == "Player")
         {
-            if (transform.position.y < 30)
+            if (OrcaManager2.orcamodori == false)
             {
-                scoreController.AddScore(0);
-                Hpcontroller.CurrentHP(-20);
+                if (transform.position.y < 11)
+                {
+                    Debug.Log("10");
+                    //HP回復
+                    Hpcontroller.CurrentHP(-10);
+                    //スコア追加
+                    scoreController.AddScore(-10);
+                    //餌生成関数を呼び出し
+                    randoms.Generate();
+                }
+                else
+                {
+                    Debug.Log("20");
+                    //HP回復
+                    Hpcontroller.CurrentHP(-10);
+                    //スコア追加
+                    scoreController.AddScore(-10);
+                    //餌生成関数を呼び出し
+                    randoms.Generate();
+                }
             }
-            else
-            {
-                scoreController.AddScore(0);
-                Hpcontroller.CurrentHP(-20);
-            }
-            //gomiGenerator.Count(1);
             Destroy(gameObject);
         }
     }

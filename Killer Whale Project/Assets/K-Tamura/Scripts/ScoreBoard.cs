@@ -54,7 +54,7 @@ public class ScoreBoard : MonoBehaviour {
     /// Scores the board move.
     /// </summary>
     /// <param name="mov">0 to <see langword="true"/> and 1 to false</param>
-    private void ScoreBoardMove(int mov)
+    public void ScoreBoardMove(int mov)
     {
         if (mov == 0)//true
         {
