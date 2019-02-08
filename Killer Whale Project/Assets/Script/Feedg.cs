@@ -8,12 +8,12 @@ public class Feedg : MonoBehaviour {
     private GameObject player;
     private ScoreController scoreController;
     private HpController Hpcontroller;
-    private FeedGenerator feedGenerator;
+    public Randoms randoms;
     void Start() {
         this.player = GameObject.Find("OrcaPrefab");
         scoreController = FindObjectOfType<ScoreController>();
         Hpcontroller = FindObjectOfType<HpController>();
-        feedGenerator = FindObjectOfType<FeedGenerator>();
+        randoms = FindObjectOfType<Randoms>();
     }
     void Movement()
     {
@@ -32,28 +32,25 @@ public class Feedg : MonoBehaviour {
     {
         if(collision.gameObject.tag == "Player")
         {
-            if(OrcaManager2.orcamodori == false)
+            if (transform.position.y < 11)
             {
-                if (transform.position.y < 11)
-                {
-                    Debug.Log("10");
-                    //HP回復
-                    Hpcontroller.CurrentHP(5);
-                    //スコア追加
-                    scoreController.AddScore(10);
-                    //餌生成関数を呼び出し
-                    feedGenerator.GetComponent<FeedGenerator>().Revival();
-                }
-                else
-                {
-                    Debug.Log("20");
-                    //HP回復
-                    Hpcontroller.CurrentHP(10);
-                    //スコア追加
-                    scoreController.AddScore(20);
-                    //餌生成関数を呼び出し
-                    feedGenerator.GetComponent<FeedGenerator>().Revival();
-                }
+                Debug.Log("10");
+                //HP回復
+                Hpcontroller.CurrentHP(5);
+                //スコア追加
+                scoreController.AddScore(10);
+                //餌生成関数を呼び出し
+                randoms.Generate();
+            }
+            else
+            {
+                Debug.Log("20");
+                //HP回復
+                Hpcontroller.CurrentHP(10);
+                //スコア追加
+                scoreController.AddScore(20);
+                //餌生成関数を呼び出し
+                randoms.Generate();
             }
             Destroy(gameObject);
         }
