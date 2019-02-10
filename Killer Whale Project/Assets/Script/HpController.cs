@@ -15,6 +15,11 @@ public class HpController : MonoBehaviour {
     [SerializeField]
     private GameObject ScoreBoard;
     ScoreBoard scoreboard;
+    GameObject image;
+    [SerializeField]
+    Sprite imageHPmax, imageHP75, imageHP50, imageHP25, imageHP0;
+    int HPmax = 100, HP75 = 75, HP50 = 50, HP25 = 25;//Sprite設定
+
 
 
     public Button button;
@@ -24,6 +29,7 @@ public class HpController : MonoBehaviour {
     }
     private void Start()
     {
+
         scoreboard = GetComponent<ScoreBoard>();
         button.gameObject.SetActive(false);
         currentHP = maxHP;
@@ -31,8 +37,33 @@ public class HpController : MonoBehaviour {
     private void Update()
     {
         Hp.HPDown(currentHP,maxHP);
+
+        if (currentHP >= HPmax)
+        {
+            image.GetComponent<Image>().sprite = imageHPmax;
+
+        }
+        else if (currentHP >= HP75)
+        {
+            image.GetComponent<Image>().sprite = imageHP75;
+        }
+        else if (currentHP >= HP50)
+        {
+            image.GetComponent<Image>().sprite = imageHP50;
+        }
+        else if (currentHP >= HP25)
+        {
+            image.GetComponent<Image>().sprite = imageHP25;
+        }
+        else
+        {
+            image.GetComponent<Image>().sprite = imageHP0;
+        }
+
+
         if (0 <= currentHP)
         {
+
             currentHP -= Time.deltaTime * 4;
         }else{
             button.gameObject.SetActive(true);
