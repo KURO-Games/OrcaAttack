@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class ScoreController : MonoBehaviour {
 
     public Text scoreText;
-    private int score;
+    public int score;
 
     private void Start()
     {
@@ -18,9 +18,15 @@ public class ScoreController : MonoBehaviour {
     }
     private void Update()
     {
-        if(scoreText != null)
+
+        if (scoreText != null)
         {
             scoreText.text = string.Format("Score:{0}", score);
+
         }
+    }
+    public int ScoreSend()
+    {
+        return score;
     }
 }

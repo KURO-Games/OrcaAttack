@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EsaController : MonoBehaviour {
+public class EsaController2 : MonoBehaviour {
     [SerializeField]
     private float Speed = 2;
     private GameObject player;
